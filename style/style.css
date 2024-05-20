@@ -34,10 +34,12 @@ section#grid_100 article.square{
     background-color: rgb(99, 255, 107);
 }
 
-.square.bomb {
+.square.bomb,
+.revealed-bomb{
     background: red;
 }
 
-.revealed-bomb{
-    background-color: red;
+.square.disable {
+    pointer-events: none; 
+    opacity: 0.6; 
 }
