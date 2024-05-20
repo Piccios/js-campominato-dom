@@ -1,4 +1,3 @@
-// Creo una griglia con 100 boxes
 
 const gridElement = document.querySelector('section#grid_100');
 
@@ -10,13 +9,19 @@ playButton.addEventListener('click', function () {
     generateNewGame(100, gridElement, bombs)
 })
 
+
+
+
+// Functions //////////////////////////////////////////////////
+
+
+// Function that generates a new game//////////////////////////
+
 function generateNewGame(numberOfCells, containerElement, bombs) {
     containerElement.innerHTML = '';
-    // Ciclo per creare i quadrati della griglia    
     for (let index = 0; index < numberOfCells; index++) {
         const squareElement = document.createElement('article');
         squareElement.classList.add('square');
-        // Event listener per il click su ogni quadrato
         squareElement.addEventListener('click', function () {
             if (bombs.includes(index + 1)) {
                 squareElement.classList.add('bomb');
@@ -25,18 +30,18 @@ function generateNewGame(numberOfCells, containerElement, bombs) {
                 endOfGame(containerElement);
             } else {
                 squareElement.classList.add('active');
-            } console.log((index) +1 );
+                points.push(1);
+            } console.log((index) + 1) + "points: " + points;
         }, { once: true });
-
         squareElement.append((index) + 1);
         gridElement.appendChild(squareElement);
-
-    } 
+    }
 }
 
 
 
-// Funzione per generare le bombe
+// Function to generate bombs in a random pattern ////////////////
+
 function generateBombs(numberOfCells) {
     let bombs = [];
     while (bombs.length < 16) {
@@ -48,7 +53,9 @@ function generateBombs(numberOfCells) {
     return bombs;
 }
 
-// Funzione per rivelare tutte le bombe
+
+
+// Function that reveals the bombs on the grid //////////////////
 
 function revealBombs(containerElement, bombs) {
     const squares = containerElement.querySelectorAll('.square');
@@ -59,7 +66,9 @@ function revealBombs(containerElement, bombs) {
     });
 }
 
-// Funzione per disabilitare il gioco una volta perso
+
+
+// Function that disables the grid when the game ends ////////////
 
 function endOfGame(containerElement) {
     const squares = containerElement.querySelectorAll('.square');
