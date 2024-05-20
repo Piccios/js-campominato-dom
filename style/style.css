@@ -1,8 +1,11 @@
 main{
     background-color:rgb(69, 178, 74);
-
     padding: 4rem;
     margin: 0 auto;
+}
+
+img.logo{
+    height: 80px;
 }
 
 section#grid_100{
