@@ -6,12 +6,13 @@ const playButton = document.querySelector('button#play');
 
 
 playButton.addEventListener('click', function () {
-    generateNewGame(100, gridElement)
+    const bombs = generateBombs(100);
+    generateNewGame(100, gridElement, bombs)
 })
 
-function generateNewGame(numberOfCells, containerElement,bombs) {
+function generateNewGame(numberOfCells, containerElement, bombs) {
     containerElement.innerHTML = '';
-    // Creo una lista di numeri casuali da 1 a "numero di celle"
+    // Ciclo per creare i quadrati della griglia    
     for (let index = 0; index < numberOfCells; index++) {
         const squareElement = document.createElement('article');
         squareElement.classList.add('square');
