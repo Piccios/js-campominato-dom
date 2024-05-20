@@ -9,7 +9,7 @@ playButton.addEventListener('click', function () {
     generateNewGame(100, gridElement, bombs)
 })
 
-
+points = [];
 
 
 // Functions //////////////////////////////////////////////////
