@@ -5,7 +5,6 @@ const gridElement = document.querySelector('section#grid_100');
 const playButton = document.querySelector('button#play');
 
 
-
 playButton.addEventListener('click', function(){
     generateNewGame(100, gridElement)
 })
@@ -18,7 +17,10 @@ for (let index = 0; index < numberOfCells; index++) {
     squareElement.addEventListener('click', function(){
         squareElement.classList.add('active');
         console.log((index) + 1);
-    })
+        let points = 0;
+        
+
+    }, {once : true})
 
     squareElement.append((index) + 1);
     gridElement.appendChild(squareElement);
