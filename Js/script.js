@@ -28,13 +28,11 @@ function generateNewGame(numberOfCells, containerElement, bombs) {
 
         squareElement.append((index) + 1);
         gridElement.appendChild(squareElement);
-        const refreshButton = document.querySelector('button#play');
 
-        refreshButton.addEventListener('click', function () {
-            squareElement.classList.remove('active');
-        })
+
+        }
     }
-}
+
 
 
 // Funzione per generare le bombe
@@ -47,6 +45,16 @@ function generateBombs(numberOfCells) {
         }
     }
     return bombs;
+}
+
+
+// Funzione per disabilitare il gioco una volta perso
+
+function endOfGame(containerElement) {
+    const squares = containerElement.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.classList.add('disable');
+    })
 }
 
 
