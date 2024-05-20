@@ -16,9 +16,8 @@ for (let index = 0; index < numberOfCells; index++) {
     squareElement.classList.add('square');
     squareElement.addEventListener('click', function(){
         squareElement.classList.add('active');
-        console.log((index) + 1);
-        let points = 0;
         
+        console.log((index) + 1);
 
     }, {once : true})
 
@@ -37,7 +36,7 @@ let bombs = [];
 
 for (let index = 0; index < 16; index++ ){
     const randomNumber = Math.floor(Math.random() * 100) + 1;
-    if (bombs.indexOf(randomNumber) !== bombs.index){
+    if (bombs.indexOf(randomNumber) === -1){
         bombs.push(randomNumber);
     }
     bombs
