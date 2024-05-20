@@ -3,7 +3,17 @@
 const gridElement = document.querySelector('section#grid_100');
 
 
-for (let index = 0; index < 100; index++) {
+
+
+const playButton = document.querySelector('button#play');
+
+playButton.addEventListener('click', function(){
+    generateNewGame(100, gridElement)
+})
+
+function generateNewGame(numberOfCells, containerElement){
+    containerElement.innerHTML = '';
+for (let index = 0; index < numberOfCells; index++) {
     const squareElement = document.createElement('article'); 
     squareElement.classList.add('square');
     squareElement.addEventListener('click', function(){
@@ -13,9 +23,8 @@ for (let index = 0; index < 100; index++) {
 
     squareElement.append((index) + 1);
     gridElement.appendChild(squareElement);
-    const refreshButton = document.querySelector('button#refresh');
+    const refreshButton = document.querySelector('button#play');
 
 refreshButton.addEventListener('click', function(){squareElement.classList.remove('active');
 }) 
-}
-
+}}
