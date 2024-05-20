@@ -2,10 +2,9 @@
 
 const gridElement = document.querySelector('section#grid_100');
 
-
-
-
 const playButton = document.querySelector('button#play');
+
+
 
 playButton.addEventListener('click', function(){
     generateNewGame(100, gridElement)
@@ -28,3 +27,20 @@ for (let index = 0; index < numberOfCells; index++) {
 refreshButton.addEventListener('click', function(){squareElement.classList.remove('active');
 }) 
 }}
+
+
+// Creo un array di 16 numeri casuali, non ripetibili, da 1 a 100 che inseriro' nella funzione della griglia
+
+let bombs = [];
+
+for (let index = 0; index < 16; index++ ){
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    if (bombs.indexOf(randomNumber) !== bombs.index){
+        bombs.push(randomNumber);
+    }
+    bombs
+}
+
+
+
+
