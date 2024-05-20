@@ -20,6 +20,7 @@ section#grid_100 > article.square{
     font-size: 2rem;
     font-weight: 400;
     align-items: center;
+    cursor: pointer;
 }
 
 section#grid_100 > article.square.active{
@@ -33,6 +34,7 @@ section#grid_100 article.square{
     background-color: rgb(99, 255, 107);
 }
 
-article.square.bomb{
+
+.revealed-bomb{
     background-color: red;
 }

@@ -16,22 +16,21 @@ function generateNewGame(numberOfCells, containerElement, bombs) {
     for (let index = 0; index < numberOfCells; index++) {
         const squareElement = document.createElement('article');
         squareElement.classList.add('square');
-    // Event listener per il click su ogni quadrato
-    squareElement.addEventListener('click', function () {
-        if (bombs.includes(index + 1)) {
-        squareElement.classList.add('bomb');
-        alert('Hai cliccato una bomba! Hai perso!');
-        } else {
-        squareElement.classList.add('active');
-        }
-},  { once: true });
+        // Event listener per il click su ogni quadrato
+        squareElement.addEventListener('click', function () {
+            if (bombs.includes(index + 1)) {
+                squareElement.classList.add('bomb');
+                alert('Hai cliccato una bomba! Hai perso!');
+            } else {
+                squareElement.classList.add('active');
+            }
+        }, { once: true });
 
         squareElement.append((index) + 1);
         gridElement.appendChild(squareElement);
 
-
-        }
     }
+}
 
 
 
@@ -47,6 +46,15 @@ function generateBombs(numberOfCells) {
     return bombs;
 }
 
+// Funzione per rivelare tutte le bombe
+function revealBombs(containerElement, bombs) {
+    const squares = containerElement.querySelectorAll('.square');
+    squares.forEach((square, index) => {
+        if (bombs.includes(index + 1)) {
+            square.classList.add('revealed-bomb');
+        }
+    });
+}
 
 // Funzione per disabilitare il gioco una volta perso
 
