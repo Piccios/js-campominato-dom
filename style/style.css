@@ -34,6 +34,9 @@ section#grid_100 article.square{
     background-color: rgb(99, 255, 107);
 }
 
+.square.bomb {
+    background: red;
+}
 
 .revealed-bomb{
     background-color: red;
