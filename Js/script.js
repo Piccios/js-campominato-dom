@@ -7,6 +7,8 @@ const scoreEl = document.querySelector('div#score')
 let points = 0
 
 playButton.addEventListener('click', function () {
+    points = 0;
+    scoreEl.textContent = `Score: ${points}`;
     const bombs = generateBombs(100);
     generateNewGame(100, gridElement, bombs)
 })
@@ -26,14 +28,14 @@ function generateNewGame(numberOfCells, containerElement, bombs) {
         squareElement.addEventListener('click', function () {
             if (bombs.includes(index + 1)) {
                 squareElement.classList.add('bomb');
-                alert('Hai cliccato una bomba! Hai perso!');
+                alert('Oh no! You stepped on a bomb! GAME OVER');
                 revealBombs(containerElement, bombs);
                 endOfGame(containerElement);
             } else {
                 squareElement.classList.add('active');
                 points++;
-                scoreElement.textContent = `Score: ${points}`;
-            } console.log((index) + 1) + "points: " + points;
+                scoreEl.textContent = `Score: ${points}`;
+            } 
         }, { once: true });
         squareElement.append((index) + 1);
         gridElement.appendChild(squareElement);
@@ -76,7 +78,7 @@ function endOfGame(containerElement) {
     const squares = containerElement.querySelectorAll('.square');
     squares.forEach(square => {
         square.classList.add('disable');
-    })
+    }); return alert(`Your score is: ${points}`);
 }
 
 
