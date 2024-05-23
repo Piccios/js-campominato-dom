@@ -3,13 +3,14 @@ const gridElement = document.querySelector('section#grid_100');
 
 const playButton = document.querySelector('button#play');
 
+const scoreEl = document.querySelector('div#score')
+let points = 0
 
 playButton.addEventListener('click', function () {
     const bombs = generateBombs(100);
     generateNewGame(100, gridElement, bombs)
 })
 
-points = [];
 
 
 // Functions //////////////////////////////////////////////////
@@ -30,7 +31,8 @@ function generateNewGame(numberOfCells, containerElement, bombs) {
                 endOfGame(containerElement);
             } else {
                 squareElement.classList.add('active');
-                points.push(1);
+                points++;
+                scoreElement.textContent = `Score: ${points}`;
             } console.log((index) + 1) + "points: " + points;
         }, { once: true });
         squareElement.append((index) + 1);

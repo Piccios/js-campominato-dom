@@ -12,7 +12,6 @@ section#grid_100{
     width: 1000px;
     height: 1000px;
     margin: 0 auto;
-
 }
 
 section#grid_100 > article.square{
@@ -45,3 +44,4 @@ article.revealed-bomb{
     pointer-events: none; 
     opacity: 0.6; 
 }
+
