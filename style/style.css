@@ -34,12 +34,11 @@ section#grid_100 > article.square.active{
 section#grid_100,
 section#grid_100 article.square{
     border: 2px solid black;
-    background-color: rgb(99, 255, 107);
 }
 
-.square.bomb,
-.revealed-bomb{
-    background: red;
+
+article.revealed-bomb{
+    background-color: red;
 }
 
 .square.disable {
